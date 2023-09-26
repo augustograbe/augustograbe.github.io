@@ -1,48 +1,109 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Flu's Clock</title>
         <meta charset="utf-8" />
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="style.css">
-        <title>Desenvolvimento Web 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/cwdc/mainPage/LCG.css" />
+        <style>
+            :root {
+                --cgrena: #e93d33;
+                --cgreen: #446127;
+                --corange: orange;
+                --cwhite: white;
+                --cwhite1: #e93d33;
+                --cwhite2: #446127;
+                --cwhite3: #446127;
+            }
+            body {
+                margin: 20px;
+            }
+            #clock,
+            #handles {
+                border: 5px solid #272a64;
+                padding: 20px;
+                margin: 0px;
+            }
+            #flu {
+                width: 512px;
+                font-family: cursive;
+                text-align: center;
+                font-size: 30px;
+            }
+            #container {
+                position: relative;
+                height: 512px;
+                margin: 0px;
+                margin-bottom: 50px;
+            }
+            canvas {
+                position: absolute;
+            }
+            #handles {
+                z-index: 2;
+            }
+            #clock {
+                background-color: #ffffff;
+                z-index: 1;
+            }
+        </style>
     </head>
+
     <body>
-        <nav>
-            
-            <ul class="nav">
-                <li><a href="#" class="logo">
-                      WebDev I
-                  </a>
-                </li>
-                <li><a href="https://krotalias.github.io/cwdc/1-html/index.html">HTML</a></li>
-                <li><a href="https://krotalias.github.io/cwdc/2-css/index.html">CSS</a></li>
-                <li><a href="https://krotalias.github.io/cwdc/3-javascript/index.html">Javascript</a></li>
-                <li><a href="https://krotalias.github.io/cwdc/4-jquery/index.html">jQuery</a></li>
-                <li><a href="https://krotalias.github.io/cwdc/5-bootstrap/index.html">Bootstrap</a></li>
-                <li><a href="https://krotalias.github.io/cwdc/6-php/index.html">PHP</a></li>
-                <li><a href="#">IC UFRJ</a></li>
-            </ul>
-      </nav>
+        <p id="flu">
+            <a href="https://tv.apple.com/br/show/ted-lasso/umc.cmc.vtoh0mn0xn7t3c643xqonfzy?itscg=MC_20000&itsct=atvp_brand_omd&mttn3pid=Google%20AdWords&mttnagencyid=a5e&mttncc=UK&mttnsiteid=143238&mttnsubad=OBR2019863_1-667837182373-c&mttnsubkw=152310867256__PmWH3HxX_&mttnsubplmnt=_adext_"
+                >AFC Richmond</a
+            >
+            <sub style="font-size: small">
+                <a href="/cg/downloads/PDFs/04_LCG_Window-Viewport.pdf">[1]</a>
+                <a href="/python/laboratorios2.html#8c">[2]</a>
+                <a
+                    href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+                >
+                    [3]
+                </a>
+            </sub>
+        </p>
 
-      <div id="Corpo">
-        <h1>Comprehensive Web Development Course</h1>
-        <div id="l_cursos">
-            <h2>Capítulos:</h2>
-            <ul class="capitulos">
-                <li><a href="https://krotalias.github.io/cwdc/1-html/index.html"><img src="cap_html.jpg"/><div class="nome_cap">HTML</div></a></li>
-                <li><a href="https://krotalias.github.io/cwdc/2-css/index.html"><img src="cap_css.jpg"/><div class="nome_cap">CSS</div></a></li>
-                <li><a href="https://krotalias.github.io/cwdc/3-javascript/index.html"><img src="cap_js.png"/><div class="nome_cap">Javascript</div></a></li>
-                <li><a href="https://krotalias.github.io/cwdc/6-php/index.html"><img src="cap_php.jpeg"/><div class="nome_cap">PHP</div></a></li>
-            </ul>
+        <div id="container">
+            <canvas id="clock" width="512" height="512">
+                Please upgrade your browser.
+            </canvas>
+            <canvas id="handles" width="512" height="512">
+                Please upgrade your browser.
+            </canvas>
         </div>
-        <h2>Videos:</h2>
-        <iframe
-        width="800"
-        height="400"
-        src="https://www.youtube.com/embed/lOz_i_2USkY"></iframe>
-        
+        <br />
+        <p>
+        </p>
+        <p>
+            <iframe
+                title="O elástico de Rivelino"
+                width="320"
+                height="240"
+                src="https://www.youtube.com/watch?v=3u7EIiohs6U"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            >
+            </iframe>
+            <br />
 
-      </div>
+        </p>
+
+        <script src="suncalc.js"></script>
+        <script src="clock.js"></script>
+        <script src="date.js"></script>
+        <script>
+            document.querySelector(
+                "#Rivelino"
+            ).innerHTML += `(há ${elapsedYears("1975-06-10")} anos atrás)`;
+            document.querySelector("#Renato").innerHTML += `(há ${elapsedYears(
+                "1995-06-25"
+            )} anos atrás)`;
+            document.querySelector("#Cano").innerHTML += `(há ${elapsedYears(
+                "2023-02-12"
+            )} anos atrás)`;
+        </script>
     </body>
 </html>
